@@ -103,7 +103,19 @@ static void netlink_recv_msg_fn(struct sk_buff *skb_in){
         }                
     }
 }
-                     
+
+                 
+/* Assignment answer 
+ *  Reference kernel header : https://github.com/torvalds/linux/blob/master/include/uapi/linux/netlink.h
+ */
+
+static void nlmsg_dump(struct nlmsghdr *nlh){
+    printk(KERN_INFO "Netlink header nlmsg_len = " nlh->nlmsg_len);
+	printk(KERN_INFO "Netlink header nlmsg_type = " nlh->nlmsg_type);
+	printk(KERN_INFO "Netlink header nlmsg_flags = " nlh->nlmsg_flags);
+	printk(KERN_INFO "Netlink header nlmsg_seq = " nlh->nlmsg_seq);
+	printk(KERN_INFO "Netlink header nlmsg_pid = " nlh->nlmsg_pid);
+}                   
                      
                      
 static struct netlink_kernel_cfg cfg = {
@@ -112,7 +124,8 @@ static struct netlink_kernel_cfg cfg = {
     /* There are other parameters of this structure, for now let us
      * not use them as we are just kid !!*/
 };                   
-                     
+
+				 
 /*Init function of this kernel Module*/
 static int __init NetlinkGreetings_init(void) {
     
