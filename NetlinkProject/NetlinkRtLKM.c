@@ -110,11 +110,11 @@ static void netlink_recv_msg_fn(struct sk_buff *skb_in){
  */
 
 static void nlmsg_dump(struct nlmsghdr *nlh){
-    printk(KERN_INFO "Netlink header nlmsg_len = " nlh->nlmsg_len);
-	printk(KERN_INFO "Netlink header nlmsg_type = " nlh->nlmsg_type);
-	printk(KERN_INFO "Netlink header nlmsg_flags = " nlh->nlmsg_flags);
-	printk(KERN_INFO "Netlink header nlmsg_seq = " nlh->nlmsg_seq);
-	printk(KERN_INFO "Netlink header nlmsg_pid = " nlh->nlmsg_pid);
+    printk(KERN_INFO "Netlink header nlmsg_len = %d\n", nlh->nlmsg_len);
+	printk(KERN_INFO "Netlink header nlmsg_type = %d\n", nlh->nlmsg_type);
+	printk(KERN_INFO "Netlink header nlmsg_flags = %d\n", nlh->nlmsg_flags);
+	printk(KERN_INFO "Netlink header nlmsg_seq = %d\n", nlh->nlmsg_seq);
+	printk(KERN_INFO "Netlink header nlmsg_pid = %d\n", nlh->nlmsg_pid);
 }                   
                      
                      
